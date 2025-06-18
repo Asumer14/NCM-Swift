@@ -1,4 +1,4 @@
-import type { NCMetadata } from '@/worker/ncm.worker';
+import type { DecryptResult as NCMetadata } from '@/lib/ncm/entity';
 
 export type FileStatus = 'pending' | 'decrypting' | 'success' | 'error';
 
