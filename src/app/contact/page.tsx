@@ -131,7 +131,7 @@ export default function ContactPage() {
                   这是一个开源项目，我们欢迎任何形式的贡献。如果您发现了Bug或有功能建议，请通过GitHub提交Issue或Pull Request。
                 </p>
                 <Button asChild variant="outline">
-                    <a href="#" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/Asumer14/NCM-Swift" target="_blank" rel="noopener noreferrer">
                         <Github className="mr-2 h-4 w-4" />
                         访问 GitHub
                     </a>

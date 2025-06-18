@@ -68,7 +68,7 @@ export default function HomePage() {
               size="lg"
               className="border-slate-300 hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800 transition-all duration-300"
             >
-              <Link href="https://github.com/your-repo" target="_blank">
+              <Link href="https://github.com/Asumer14/NCM-Swift" target="_blank">
                 查看源码
               </Link>
             </Button>
