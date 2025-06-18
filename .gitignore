@@ -2,37 +2,42 @@
 
 # Dependencies
 /node_modules
-/.pnp
-.pnp.js
 
-# Testing
-/coverage
-
-# Next.js
+# Build artifacts
 /.next/
 /out/
+/build/
 
-# Production
-/build
-
-# Misc
-.DS_Store
-*.pem
-
-# Vercel
-.vercel
-
-# Local secrets
+# Environment variables
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Task Master & Cursor
+# IDE and editor specific
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Taskmaster
 .taskmaster/
+
+# Cursor
 .cursor/
 
-# Log files
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

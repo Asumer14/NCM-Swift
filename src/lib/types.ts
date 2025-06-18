@@ -5,14 +5,6 @@ export type FileState = {
   file: File;
   status: 'pending' | 'decrypting' | 'success' | 'error';
   progress: number;
-  result?: {
-    blob: Blob;
-    url: string;
-    ext: string;
-    title: string;
-    artist?: string;
-    album?: string;
-    picture?: string;
-  };
+  result?: DecryptResult;
   error?: string;
 }; 

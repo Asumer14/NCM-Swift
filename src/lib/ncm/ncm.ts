@@ -52,7 +52,7 @@ class NcmDecrypt {
   blob?: Blob;
   oriMeta?: NcmMusicMeta;
   newMeta?: IMusicMeta;
-  image?: { mime: string; buffer: Buffer; url: string };
+  image?: { mime: string; buffer: Buffer };
 
   constructor(buf: ArrayBuffer, filename: string) {
     const prefix = new Uint8Array(buf, 0, 8);
@@ -219,12 +219,19 @@ class NcmDecrypt {
 
   gatherResult(): DecryptResult {
     if (!this.newMeta || !this.blob) throw Error('bad sequence');
+
+    let pictureDataUrl;
+    if (this.image) {
+      const base64 = this.image.buffer.toString('base64');
+      pictureDataUrl = `data:${this.image.mime};base64,${base64}`;
+    }
+
     return {
       title: this.newMeta.title,
       artist: this.newMeta.artists?.join('; '),
       ext: this.format,
       album: this.newMeta.album,
-      picture: this.image?.url,
+      picture: pictureDataUrl,
       file: URL.createObjectURL(this.blob),
       blob: this.blob,
       mime: this.mime,

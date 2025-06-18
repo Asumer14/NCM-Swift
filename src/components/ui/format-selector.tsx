@@ -32,7 +32,7 @@ export function FormatSelector({ value, onValueChange }: FormatSelectorProps) {
         </div>
       </RadioGroup>
       <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-        默认将转换为高质量的 MP3 文件。
+        默认将转换为MP3 文件。
       </p>
     </div>
   );

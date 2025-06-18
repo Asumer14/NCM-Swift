@@ -100,6 +100,7 @@ export function FileList({ files, namingTemplate }: FileListProps) {
                         src={file.result?.picture || '/no-cover.svg'}
                         alt="album cover"
                         fill
+                        unoptimized
                         className="rounded-md object-cover"
                       />
                     </div>
