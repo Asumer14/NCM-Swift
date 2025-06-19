@@ -74,3 +74,5 @@ NCM Swift 是一个现代、高效且注重隐私的网页工具，旨在帮助�
 本项目为一个个人项目，仅供学习和技术交流使用。
 
 ---
+
+_Triggering a new deployment._
