@@ -10,6 +10,7 @@ interface DownloadButtonsProps {
   files: FileState[];
   format: string;
   template: string;
+  zipFileName?: string;
 }
 
 function getFileName(file: FileState, template: string, format: string) {
@@ -30,7 +31,7 @@ function getFileName(file: FileState, template: string, format: string) {
   return `${finalName}.${format}`;
 }
 
-export function DownloadButtons({ files, format, template }: DownloadButtonsProps) {
+export function DownloadButtons({ files, format, template, zipFileName }: DownloadButtonsProps) {
   const handleBatchDownload = async () => {
     const zip = new JSZip();
 
@@ -44,7 +45,8 @@ export function DownloadButtons({ files, format, template }: DownloadButtonsProp
     });
 
     const zipBlob = await zip.generateAsync({ type: 'blob' });
-    saveAs(zipBlob, 'NCMSwift_decrypted_files.zip');
+    const finalZipName = zipFileName && zipFileName.trim() ? `${zipFileName.trim()}.zip` : 'NCMSwift_decrypted_files.zip';
+    saveAs(zipBlob, finalZipName);
   };
 
   if (files.length === 0) {

@@ -7,7 +7,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Input } from '@/components/ui/input';
 
 interface NamingTemplateProps {
   value: string;
@@ -31,34 +30,22 @@ const PRESET_TEMPLATES = [
 
 export function NamingTemplate({ value, onValueChange }: NamingTemplateProps) {
   return (
-    <div className="mt-8 w-full max-w-md">
-      <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
-        自定义文件名格式
+    <div className="space-y-2">
+      <h3 className="text-lg font-medium">
+        文件名格式
       </h3>
-      <div className="mt-2 flex items-center space-x-2">
-        <Input
-          type="text"
-          value={value}
-          onChange={(e) => onValueChange(e.target.value)}
-          placeholder="例如: [artist] - [title]"
-          className="flex-grow"
-        />
-        <Select onValueChange={(selectedValue) => onValueChange(selectedValue)}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="选择预设模板" />
-          </SelectTrigger>
-          <SelectContent>
-            {PRESET_TEMPLATES.map((template) => (
-              <SelectItem key={template.value} value={template.value}>
-                {template.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
-      <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-        可用变量: `[artist]`, `[title]`, `[album]`
-      </p>
+      <Select value={value} onValueChange={onValueChange}>
+        <SelectTrigger>
+          <SelectValue placeholder="选择预设模板" />
+        </SelectTrigger>
+        <SelectContent>
+          {PRESET_TEMPLATES.map((template) => (
+            <SelectItem key={template.value} value={template.value}>
+              {template.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     </div>
   );
 } 
